@@ -1,19 +1,19 @@
 <form>
     <div>
         <label for="id">Id</label>
-        <input type="number" />
+        <input type="number" name="id" [(ngModel)]="tarea.id" readonly />
     </div>
     <div>
         <label for="nombre">Nombre</label>
-        <input type="text" />
+        <input type="text" name="nombre" [(ngModel)]="tarea.nombre" />
     </div>
     <div>
         <label for="descripcion">Descripción</label>
-        <input type="text" />
+        <input type="text" name="descripcion" [(ngModel)]="tarea.descripcion" />
     </div>
     <div>
         <label for="terminada">Terminada</label>
-        <input type="checkbox" />
+        <input type="checkbox" name="terminada" [(ngModel)]="tarea.terminada" />
     </div>
     <div>
         <label for=""></label>

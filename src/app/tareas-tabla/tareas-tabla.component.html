@@ -5,6 +5,7 @@
             <th>Nombre</th>
             <th>Descripción</th>
             <th>Terminada</th>
+            <th>Opciones</th>
         </tr>
     </thead>
     <tbody>
@@ -15,6 +16,13 @@
             <td>
                 <input type="checkbox" [checked]='tarea.terminada' />
             </td>
+            <td>
+                <a routerLink="/tareas/form">Editar</a>
+                &nbsp;
+                <a href="#">Borrar</a>
+            </td>
         </tr>
     </tbody>
 </table>
+
+<button routerLink="/tareas/form">Añadir</button>

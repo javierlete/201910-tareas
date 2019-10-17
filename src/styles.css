@@ -14,3 +14,20 @@ th {
     background: black;
     color: white;
 }
+
+a, button {
+    text-decoration: none;
+    background: black;
+    color: white;
+    border: 1px solid lightgray;
+    padding: 0.5em;
+    display: inline-block;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 13px;
+}
+
+a:hover, button:hover {
+    background: gray;
+    cursor: pointer;
+}

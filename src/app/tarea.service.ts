@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Tarea } from './tarea';
 import { Observable, of } from 'rxjs';
+import { catchError } from 'rxjs/operators';
 import { HttpClient } from '@angular/common/http';
 
 @Injectable({
@@ -14,6 +15,15 @@ export class TareaService {
   constructor(private http: HttpClient) {}
 
   getTareas(): Observable<Tarea[]> {
-    return this.http.get<Tarea[]>(this.url);
+    return this.http.get<Tarea[]>(this.url).pipe(
+      catchError(
+        (err, caught) => {
+          alert('Ha habido un error en la conexión a las tareas: ' + err.message);
+          console.warn(err);
+          console.warn(caught);
+          return of([]);
+        }
+      )
+    );
   }
 }

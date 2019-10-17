@@ -5,6 +5,7 @@ import { TareaFormComponent } from './tarea-form/tarea-form.component';
 
 
 const routes: Routes = [
+  { path: '', redirectTo: '/tareas/tabla', pathMatch: 'full' },
   { path: 'tareas/tabla', component: TareasTablaComponent },
   { path: 'tareas/form', component: TareaFormComponent }
 ];

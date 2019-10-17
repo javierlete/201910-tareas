@@ -31,3 +31,8 @@ a:hover, button:hover {
     background: gray;
     cursor: pointer;
 }
+
+label {
+    display: inline-block;
+    padding-bottom: 1em;
+}

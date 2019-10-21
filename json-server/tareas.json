@@ -32,9 +32,9 @@
     },
     {
       "id": 6,
-      "nombre": "Sexta",
-      "descripcion": "Tarea",
-      "terminada": true
+      "nombre": "La Sexta",
+      "descripcion": "Cadena de TV",
+      "terminada": false
     }
   ]
 }

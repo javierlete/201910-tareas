@@ -54,6 +54,19 @@ export class TareaService {
     );
   }
 
+  updateTarea(tarea: Tarea): Observable<Tarea> {
+    return this.http.put<Tarea>(this.url + tarea.id, tarea).pipe(
+      catchError(
+        (err, caught) => {
+          alert(`Ha habido un error en la modificación de la tarea: ` + err.message);
+          console.warn(err);
+          console.warn(caught);
+          return of(tarea);
+        }
+      )
+    );
+  }
+
   deleteTarea(id: number): Observable<any> {
     return this.http.delete(this.url + id).pipe(
       catchError(

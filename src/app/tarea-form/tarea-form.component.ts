@@ -30,7 +30,9 @@ export class TareaFormComponent implements OnInit {
 
   onAceptar() {
     if (this.tarea.id) {
-      alert('Editar');
+      this.tareaService.updateTarea(this.tarea).subscribe(
+        () => this.location.back()
+      );
     } else {
       this.tareaService.insertTarea(this.tarea).subscribe(
         tareaRecibida => {

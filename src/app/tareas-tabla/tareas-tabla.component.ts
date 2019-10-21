@@ -18,9 +18,14 @@ export class TareasTablaComponent implements OnInit {
     );
   }
 
-  onBorrar() {
+  onBorrar(id: number) {
     if (confirm('¿Estás seguro de que quieres borrar este registro?')) {
-      alert('Registro borrado');
+      this.tareaService.deleteTarea(id).subscribe(
+        () => {
+          this.tareas = this.tareas.filter(tarea => tarea.id !== id);
+          alert('Borrado');
+        }
+      );
     } else {
       alert('El registro se conservará');
     }

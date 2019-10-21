@@ -9,7 +9,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class TareaService {
 
-  url = 'http://localhost:3000/tareas';
+  url = 'http://localhost:3000/tareas/';
   tareas: Tarea[];
 
   constructor(private http: HttpClient) {}
@@ -25,5 +25,9 @@ export class TareaService {
         }
       )
     );
+  }
+
+  deleteTarea(id: number): Observable<any> {
+    return this.http.delete(this.url + id);
   }
 }

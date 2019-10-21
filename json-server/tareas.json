@@ -10,7 +10,7 @@
       "id": 2,
       "nombre": "Tarea 2",
       "descripcion": "Descripción 2",
-      "terminada": true
+      "terminada": false
     },
     {
       "id": 3,
@@ -22,7 +22,7 @@
       "id": 4,
       "nombre": "Segunda tarea",
       "descripcion": "Nueva tarea creada con el editor",
-      "terminada": true
+      "terminada": false
     },
     {
       "id": 5,

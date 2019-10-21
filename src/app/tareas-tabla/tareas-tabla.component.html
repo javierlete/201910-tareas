@@ -14,7 +14,7 @@
             <td>{{tarea.nombre}}</td>
             <td>{{tarea.descripcion}}</td>
             <td>
-                <input type="checkbox" [checked]='tarea.terminada' />
+                <input #inputCheckbox type="checkbox" [checked]='tarea.terminada' (click)="onTerminada(tarea.id, inputCheckbox.checked)" />
             </td>
             <td>
                 <a routerLink="/tareas/form/{{tarea.id}}">Editar</a>

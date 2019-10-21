@@ -13,9 +13,11 @@ export class TareasTablaComponent implements OnInit {
   constructor(private tareaService: TareaService) { }
 
   ngOnInit(): void {
-    this.tareaService.getTareas().subscribe(
-      tareasRecibidas => this.tareas = tareasRecibidas
-    );
+    this.cargarTareas();
+  }
+
+  private cargarTareas() {
+    this.tareaService.getTareas().subscribe(tareasRecibidas => this.tareas = tareasRecibidas);
   }
 
   onBorrar(id: number) {
@@ -34,5 +36,21 @@ export class TareasTablaComponent implements OnInit {
     } else {
       alert('El registro se conservará');
     }
+  }
+
+  onTerminada(id: number, terminada: boolean) {
+    this.tareaService.terminadaTarea(id, terminada).subscribe(
+      fragmento => {
+        if (fragmento.id !== 0) {
+          const tarea: Tarea = this.tareas.find(t => t.id === id);
+          console.log(tarea);
+          tarea.terminada = !tarea.terminada;
+          console.log(tarea);
+          console.log(this.tareas);
+        } else {
+          this.cargarTareas();
+        }
+      }
+    );
   }
 }

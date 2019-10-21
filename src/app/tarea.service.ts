@@ -67,6 +67,24 @@ export class TareaService {
     );
   }
 
+  patchTarea(id: number, fragmento: any): Observable<any> {
+    return this.http.patch<any>(this.url + id, fragmento).pipe(
+      catchError(
+        (err, caught) => {
+          alert(`Ha habido un error en la modificación de la tarea: ` + err.message);
+          console.warn(err);
+          console.warn(caught);
+          fragmento.id = 0;
+          return of(fragmento);
+        }
+      )
+    );
+  }
+
+  terminadaTarea(id: number, terminada: boolean): Observable<any> {
+    return this.patchTarea(id, { terminada });
+  }
+
   deleteTarea(id: number): Observable<any> {
     return this.http.delete(this.url + id).pipe(
       catchError(

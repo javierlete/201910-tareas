@@ -10,7 +10,7 @@ import { TareaService } from '../tarea.service';
 export class TareasTablaComponent implements OnInit {
   tareas: Tarea[];
 
-  constructor(private tareaService: TareaService) {}
+  constructor(private tareaService: TareaService) { }
 
   ngOnInit(): void {
     this.tareaService.getTareas().subscribe(
@@ -21,7 +21,12 @@ export class TareasTablaComponent implements OnInit {
   onBorrar(id: number) {
     if (confirm('¿Estás seguro de que quieres borrar este registro?')) {
       this.tareaService.deleteTarea(id).subscribe(
-        () => {
+        (dato) => {
+          if (dato === 'error') {
+            alert('No se ha podido borrar');
+            return;
+          }
+
           this.tareas = this.tareas.filter(tarea => tarea.id !== id);
           alert('Borrado');
         }

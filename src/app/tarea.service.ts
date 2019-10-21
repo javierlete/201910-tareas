@@ -28,6 +28,15 @@ export class TareaService {
   }
 
   deleteTarea(id: number): Observable<any> {
-    return this.http.delete(this.url + id);
+    return this.http.delete(this.url + id).pipe(
+      catchError(
+        (err, caught) => {
+          alert(`Ha habido un error en el borrado de la tarea ${id}: ` + err.message);
+          console.warn(err);
+          console.warn(caught);
+          return of('error');
+        }
+      )
+    );
   }
 }

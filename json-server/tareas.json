@@ -1,16 +1,40 @@
 {
-    "tareas": [
-        {
-            "id": 1,
-            "nombre": "Tarea 1",
-            "descripcion": "Descripción 1",
-            "terminada": false
-        },
-        {
-            "id": 2,
-            "nombre": "Tarea 2",
-            "descripcion": "Descripción 2",
-            "terminada": true
-        }
-    ]
+  "tareas": [
+    {
+      "id": 1,
+      "nombre": "Tarea 1",
+      "descripcion": "Descripción 1",
+      "terminada": false
+    },
+    {
+      "id": 2,
+      "nombre": "Tarea 2",
+      "descripcion": "Descripción 2",
+      "terminada": true
+    },
+    {
+      "id": 3,
+      "nombre": "Nueva tarea",
+      "descripcion": "Tarea creada con el nuevo sistema",
+      "terminada": true
+    },
+    {
+      "id": 4,
+      "nombre": "Segunda tarea",
+      "descripcion": "Nueva tarea creada con el editor",
+      "terminada": true
+    },
+    {
+      "id": 5,
+      "nombre": "Quinta tarea",
+      "descripcion": "Tarea quinta",
+      "terminada": true
+    },
+    {
+      "id": 6,
+      "nombre": "Sexta",
+      "descripcion": "Tarea",
+      "terminada": true
+    }
+  ]
 }

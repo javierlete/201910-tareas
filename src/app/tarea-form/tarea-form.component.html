@@ -1,5 +1,5 @@
 <form>
-    <div>
+    <div *ngIf="tarea.id">
         <label for="id">Id</label>
         <input type="number" name="id" [(ngModel)]="tarea.id" readonly />
     </div>
@@ -17,6 +17,6 @@
     </div>
     <div>
         <label for=""></label>
-        <button routerLink="/tareas/tabla">Aceptar</button>
+        <button (click)="onAceptar()">Aceptar</button>
     </div>  
 </form>

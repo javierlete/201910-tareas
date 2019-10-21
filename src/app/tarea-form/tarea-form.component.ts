@@ -23,4 +23,12 @@ export class TareaFormComponent implements OnInit {
       );
     }
   }
+
+  onAceptar() {
+    if (this.tarea.id) {
+      alert('Editar');
+    } else {
+      alert('Añadir');
+    }
+  }
 }

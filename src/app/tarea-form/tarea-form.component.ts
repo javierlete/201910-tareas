@@ -17,8 +17,10 @@ export class TareaFormComponent implements OnInit {
     const id: number = +this.route.snapshot.paramMap.get('id');
     console.log(id);
 
-    this.tareaService.getTarea(id).subscribe(
-      tareaRecibida => this.tarea = tareaRecibida
-    );
+    if (id !== 0) {
+      this.tareaService.getTarea(id).subscribe(
+        tareaRecibida => this.tarea = tareaRecibida
+      );
+    }
   }
 }

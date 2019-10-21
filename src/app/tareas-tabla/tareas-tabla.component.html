@@ -17,7 +17,7 @@
                 <input type="checkbox" [checked]='tarea.terminada' />
             </td>
             <td>
-                <a routerLink="/tareas/form">Editar</a>
+                <a routerLink="/tareas/form/{{tarea.id}}">Editar</a>
                 &nbsp;
                 <a (click)="onBorrar(tarea.id)">Borrar</a>
             </td>
